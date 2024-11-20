@@ -1,20 +1,21 @@
 import Footer from "../../components/footer"
 import Header from "../../components/header"
 import MenuNav from "../../components/menu-nav"
-import Notebook from "../../assets/product1.png"
 import {useCart} from "../../store/cart-store"
+import { FaTrash } from "react-icons/fa";
+
 
 const Cart = () => {
 
-    const { produtos }  = useCart()
+    const { products, removeProduct }  = useCart()
 
     return (
         <div>
             <Header />
             <MenuNav />
-            {produtos.length > 0 ? (
+            {products.length > 0 ? (
                 <div>
-                    {produtos.map((listaprodutos) => (
+                    {products.map((listaprodutos) => (
                         <div className="h-screen p-8">
                             <div className="flex flex-col gap-8">
                                 <div className="bg-colorGray flex items-center justify-center gap-8 p-8 rounded-md shadow-lg">
@@ -22,9 +23,10 @@ const Cart = () => {
                                     <p>{listaprodutos.name}</p>
                                     <div className="flex gap-2 bg-colorPrimary text-colorSecondary p-2 rounded-md">
                                         <button>-</button>
-                                        <p>{produtos.length}</p>
+                                        <p>{listaprodutos.quantity}</p>
                                         <button>+</button>
                                     </div>
+                                    <button onClick={() => removeProduct(listaprodutos.id)}><FaTrash /></button>
                                 </div>
         
                                 <div className="bg-colorGray flex flex-col rounded-md shadow-lg p-8">

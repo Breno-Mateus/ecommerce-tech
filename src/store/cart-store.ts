@@ -1,13 +1,21 @@
-import { create } from "zustand"
-import { Product } from "../data/products"
+import { create } from "zustand";
+import { Product } from "../data/products";
 
-interface FuncionalidadesCarrinhoDeCompras {
-    produtos: Product[];
-    adicionarNoCarrinho: (produto: Product) => void;
-    //RemoveDoCarrinho: (produto: Produtos) => void;
-}
+export interface cartProduct extends Product {
+    quantity: number;
+};
+interface cart {
+    products: cartProduct[];
+    addProduct: (produto: cartProduct) => void;
+    removeProduct: (id: number) => void;
+};
 
-export const useCart = create<FuncionalidadesCarrinhoDeCompras>((set) => ({
-    produtos: [],
-    adicionarNoCarrinho: (produto) => set((item) => ({produtos: [...item.produtos, produto]})),
-}))
+export const useCart = create<cart>((set) => ({
+    products: [],
+    addProduct: (product) => set((state) => ({
+        products: [...state.products, product]
+    })),
+    removeProduct: (id) => set((state) => ({
+        products: state.products.filter((products) => products.id !== id)
+    }))
+}));

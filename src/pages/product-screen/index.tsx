@@ -3,21 +3,21 @@ import MenuNav from "../../components/menu-nav"
 import Footer from "../../components/footer"
 import { FaShoppingBasket } from "react-icons/fa"
 import Notebook from "../../assets/product1.png"
-import { useCart } from "../../store/cart-store"
-import { Product } from "../../data/products"
+import { cartProduct, useCart } from "../../store/cart-store"
 import Smartphones from "../../assets/iphone.png"
 
 
 const ProductScreen = () => {
 
-    const {adicionarNoCarrinho} = useCart()
+    const {addProduct} = useCart()
 
-    const produtoteste : Product = {
+    const produtoteste : cartProduct = {
         id: 1,
-        name: "Notebook Dell Inspiron 15",
+        name: "Esse é o produto teste",
         price: 3500,
         category: "notebooks",
-        image: `${Smartphones}`, // Imagem de notebook
+        image: `${Smartphones}`,
+        quantity: 3,
     }
 
     return(
@@ -44,7 +44,7 @@ const ProductScreen = () => {
                         </div>
                     </div>
             
-                    <button onClick={() => (adicionarNoCarrinho(produtoteste))} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-full flex items-center justify-center gap-6"> <FaShoppingBasket /> Comprar</button>
+                    <button onClick={() => (addProduct(produtoteste))} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-full flex items-center justify-center gap-6"> <FaShoppingBasket /> Comprar</button>
                 </div>
             </div>
             <Footer />
