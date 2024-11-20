@@ -7,7 +7,7 @@ import { FaTrash } from "react-icons/fa";
 
 const Cart = () => {
 
-    const { products, removeProduct, incrementQuantity }  = useCart()
+    const { products, removeProduct, incrementQuantity, decrementQuantity }  = useCart()
 
     return (
         <div>
@@ -22,7 +22,7 @@ const Cart = () => {
                                     <img src={listaprodutos.image} className="h-24"/>
                                     <p>{listaprodutos.name}</p>
                                     <div className="flex gap-2 bg-colorPrimary text-colorSecondary p-2 rounded-md">
-                                        <button>-</button>
+                                        <button onClick={() => decrementQuantity(listaprodutos.id)}>-</button>
                                         <p>{listaprodutos.quantity}</p>
                                         <button onClick={() => incrementQuantity(listaprodutos.id)} >+</button>
                                     </div>
