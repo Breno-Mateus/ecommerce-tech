@@ -7,15 +7,15 @@ import { FaTrash } from "react-icons/fa";
 
 const Cart = () => {
 
-    const { products, removeProduct, incrementQuantity, decrementQuantity }  = useCart()
+    const { productsCart, removeProduct, incrementQuantity, decrementQuantity }  = useCart()
 
     return (
         <div>
             <Header />
             <MenuNav />
-            {products.length > 0 ? (
+            {productsCart.length > 0 ? (
                 <div>
-                    {products.map((listaprodutos) => (
+                    {productsCart.map((listaprodutos) => (
                         <div className="h-screen p-8">
                             <div className="flex flex-col gap-8">
                                 <div className="bg-colorGray flex items-center justify-center gap-8 p-8 rounded-md shadow-lg">
