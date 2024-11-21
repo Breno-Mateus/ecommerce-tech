@@ -4,9 +4,10 @@ import { Product } from "../data/products";
 export interface cartProduct extends Product {
     quantity: number;
 };
+
 interface cartState {
     productsCart: cartProduct[];
-    addProduct: (product: cartProduct) => void;
+    addProduct: (product: Product) => void;
     removeProduct: (id: number) => void;
     incrementQuantity: (id: number) => void;
     decrementQuantity: (id: number) => void;
@@ -14,6 +15,7 @@ interface cartState {
 
 export const useCart = create<cartState>((set) => ({
     productsCart: [],
+
     addProduct: (product) => set((state) => {
         const existingProduct = state.productsCart.find((item) => item.id === product.id);
 
@@ -30,14 +32,17 @@ export const useCart = create<cartState>((set) => ({
             }
         }
     }),
+
     removeProduct: (id) => set((state) => ({
         productsCart: state.productsCart.filter((product) => product.id !== id)
     })),
+
     incrementQuantity: (id) => set((state) => ({
         productsCart: state.productsCart.map((product) => product.id === id 
             ? {...product, quantity: product.quantity + 1} 
             : product)
     })),
+    
     decrementQuantity: (id) => set((state) => {
         const existingProduct = state.productsCart.find((product) => product.id === id);
 
