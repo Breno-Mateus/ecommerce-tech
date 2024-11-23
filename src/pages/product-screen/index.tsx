@@ -34,10 +34,12 @@ const ProductScreen = () => {
                     </div>
 
                     <div>
-                        <p className="line-through">R$ 4.275,99</p>
-                        <p>R$ 3.000 em 12x de R$ 250</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero quas aliquid recusandae? Possimus, consequuntur? Neque iusto inventore labore officiis. Aperiam nisi eos repellendus? Doloribus esse nostrum facilis maxime iste.</p>
+                    </div>
+
+                    <div>
                         <div className="flex gap-2 items-center">
-                            <p>ou</p>
+                            <p>por</p>
                             <h1 className="text-2xl font-bold">R$ {selectedProduct?.price}</h1>
                             <p>no pix</p>
                         </div>
