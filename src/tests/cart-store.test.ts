@@ -105,4 +105,38 @@ describe('Cart state management', () => {
 
         expect(result.current.productsCart).toHaveLength(0);
     });
+
+    it('should return the total value (quantity * price) of a single product', () => {
+        const { result } = renderHook(() => useCart());
+
+        expect(result.current.totalProduct(1)).toBe(0);
+
+        const product = createProduct();
+
+        act(() => {
+            result.current.addProduct(product);
+        });
+
+        expect(result.current.totalProduct(product.id)).toBe(100);
+
+        act(() => {
+            result.current.incrementQuantity(product.id);
+        });
+
+        expect(result.current.totalProduct(product.id)).toBe(200);
+    });
+
+    it('should return the total value of the cart', () => {
+        const { result } = renderHook(() => useCart());
+
+        expect(result.current.totalCart()).toBe(0);
+
+        const product = createProduct();
+
+        act(() => {
+            result.current.addProduct(product);
+        });
+
+        expect(result.current.totalCart()).toBe(100);
+    });
 });

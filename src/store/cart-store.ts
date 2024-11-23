@@ -11,9 +11,11 @@ interface cartState {
     removeProduct: (id: number) => void;
     incrementQuantity: (id: number) => void;
     decrementQuantity: (id: number) => void;
+    totalProduct: (id: number) => number;
+    totalCart: () => number;
 };
 
-export const useCart = create<cartState>((set) => ({
+export const useCart = create<cartState>((set, get) => ({
     productsCart: [],
 
     addProduct: (product) => set((state) => {
@@ -64,4 +66,17 @@ export const useCart = create<cartState>((set) => ({
 
         return { productsCart: [...state.productsCart] };
     }),
+
+    totalProduct: (id) => {
+        
+        const selectedProduct = get().productsCart.find((product) => product.id === id);
+
+        return selectedProduct ? selectedProduct?.quantity * selectedProduct?.price : 0;
+    },
+
+    totalCart: () => {
+        const valueTotal = get().productsCart.reduce((sum, product) => sum + (product.quantity * product.price), 0);
+
+        return valueTotal;
+    }
 }));

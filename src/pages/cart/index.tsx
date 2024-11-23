@@ -7,7 +7,7 @@ import { FaTrash } from "react-icons/fa";
 
 const Cart = () => {
 
-    const { productsCart, removeProduct, incrementQuantity, decrementQuantity }  = useCart();
+    const { productsCart, removeProduct, incrementQuantity, decrementQuantity, totalProduct, totalCart }  = useCart();
 
     return (
         <div>
@@ -39,7 +39,7 @@ const Cart = () => {
                             </div>
 
                             <div >
-                                <p>R$ 2.000</p>
+                                <p>R$ {totalProduct(listaprodutos.id)}</p>
                             </div>
                         </div>
                     ))}
@@ -49,8 +49,10 @@ const Cart = () => {
                         
                         <div className="flex flex-col border-b border-colorPrimary">
                             <div className="flex justify-between">
-                                <p>2 produtos</p>
-                                <p>R$ 2.000</p>
+                                {productsCart.length === 1 ? (
+                                    <p>{productsCart.length} produto</p>
+                                ) : (<p>{productsCart.length} produtos</p>)}
+                                <p>R$ {totalCart()}</p>
                             </div>
                             <div className="flex justify-between">
                                 <p className="text-green-700">frete</p>
@@ -60,7 +62,7 @@ const Cart = () => {
 
                         <div className="flex justify-between border-b border-colorPrimary">
                             <p className="font-bold">Total</p>
-                            <p className="font-bold">R$ 2.000</p>
+                            <p className="font-bold">R$ {totalCart()}</p>
                         </div>
 
                         <button className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-[20%] flex items-center justify-center gap-6">Continuar</button>
