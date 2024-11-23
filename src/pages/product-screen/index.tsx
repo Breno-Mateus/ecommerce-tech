@@ -5,8 +5,7 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { useCart } from "../../store/cart-store";
 import { useParams } from "react-router-dom";
 import products from "../../data/products";
-
-
+import { Link } from "react-router-dom";
 
 const ProductScreen = () => {
 
@@ -45,7 +44,7 @@ const ProductScreen = () => {
                         </div>
                     </div>
             
-                    <button onClick={() => addProduct(selectedProduct)} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-full flex items-center justify-center gap-6"> <FaShoppingBasket /> Comprar</button>
+                    <Link to="/cart"><button onClick={() => addProduct(selectedProduct)} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-full flex items-center justify-center gap-6"> <FaShoppingBasket /> Comprar</button></Link>
                 </div>
             </div>
             <Footer />

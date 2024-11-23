@@ -1,4 +1,4 @@
-import Logo from "../../assets/logo.png"
+import Logo from "../../assets/logo.png";
 import { FaMicrophone } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
@@ -6,9 +6,13 @@ import { MdHeadsetMic } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { BsPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
+import CartCountIcon from "../cart-count-icon";
+import { useCart } from "../../store/cart-store";
 
 const Header = () => {
+
+    const { productsCart } = useCart();
+
     return (
         <header className="flex items-center justify-around p-2">
             <Link to="/"><img src={Logo} className="h-12"/></Link>
@@ -22,11 +26,18 @@ const Header = () => {
             <div className="flex items-center gap-4">
                 <FaRegHeart className="text-2xl"/>
                 <MdHeadsetMic className="text-2xl"/>
-                <Link to="/login"><BsPersonFill className="text-2xl"/></Link>
-                <Link to="/cart"><FaShoppingCart className="text-2xl"/></Link>
+                <Link to="/login"><BsPersonFill className="text-2xl"/></Link>        
+                {productsCart.length > 0 ? (
+                    <div className="flex">
+                        <Link to="/cart"><FaShoppingCart className="text-2xl"/></Link>
+                        <CartCountIcon />
+                    </div>
+                ) : (
+                    <Link to="/cart"><FaShoppingCart className="text-2xl"/></Link>
+                )}
             </div>
         </header>
     )
-}
+};
 
-export default Header
+export default Header;
