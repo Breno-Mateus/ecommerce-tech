@@ -8,6 +8,7 @@ import PerifericosGame from "./pages/products/games-perifericos";
 import EqupamentosAudio from "./pages/products/equipamento-audio";
 import Login from "./pages/login";
 import ProductScreen from "./pages/product-screen";
+import Register from "./pages/register";
 
 const App = () => {
     return (
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path="/smartphones-tablets" element={<SmartphonesTablets />}/>
                 <Route path="/login" element={<Login />}/>
                 <Route path="/product-screen/:id" element={<ProductScreen />}/>
+                <Route path="/register" element={<Register />}/>
             </Routes>
         </Router>
     )

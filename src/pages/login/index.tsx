@@ -44,7 +44,7 @@ const Login = () => {
 
                     <button type="submit" className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90">Entrar</button>
 
-                    <a className="text-sm text-center cursor-pointer">Criar conta</a>
+                    <Link to="/register" className="text-sm text-center cursor-pointer">Criar conta</Link>
                 </form>
             </div>
 
