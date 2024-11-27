@@ -14,7 +14,7 @@ const Login = () => {
         resolver: yupResolver(userValidationLogin)
     });
     
-    const { checkUser } = userLogin();
+    const { checkUser, loginUser } = userLogin();
 
     const navigate = useNavigate();
 
@@ -23,7 +23,8 @@ const Login = () => {
         const isValidUser = checkUser(data.email, data.password);
         
         if (isValidUser) {
-            alert("Login bem-sucedido!"); 
+            loginUser(data.email, data.password); 
+            alert("Login bem-sucedido!");
             navigate("/dashboard");
         } else {
             alert("Email ou senha incorretos!");
@@ -59,4 +60,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Login;

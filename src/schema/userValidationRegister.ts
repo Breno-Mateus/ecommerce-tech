@@ -2,8 +2,8 @@ import * as Yup from "yup";
 import { InferType } from "yup";
 
 export const userValidationRegister = Yup.object().shape({
-    fullname: Yup.string()
-        .required('Nome completo é obrigatório')
+    name: Yup.string()
+        .required('O seu primeiro nome é obrigatório')
         .min(3, 'O nome deve ter pelo menos 3 caracteres'),
     email: Yup.string()
         .email('Email inválido')

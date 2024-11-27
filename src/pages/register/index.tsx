@@ -11,7 +11,7 @@ const Register = () => {
 
     const { addUser } = userLogin();
 
-    const navigate = useNavigate(); // Usando o hook useNavigate para navegação
+    const navigate = useNavigate();
 
     const {register, handleSubmit, formState: {errors}} = useForm<UserRegister>({
         resolver: yupResolver(userValidationRegister)
@@ -19,7 +19,7 @@ const Register = () => {
 
     const onSubmit = (data: UserRegister) => {
         const userData: userProps = {
-            fullname: data.fullname,
+            name: data.name,
             email: data.email,
             phone: data.phone,
             cep: data.cep,
@@ -49,7 +49,7 @@ const Register = () => {
                     <h2 className="font-extrabold text-xl">Cadastro de Usuário</h2>
 
                     <div className="flex flex-col gap-4">
-                        <Inputs label="Nome Completo*" placeholder="Breno Mateus dos Santos" type="text" htmlForId="fullname" register={register} error={errors.fullname?.message}/>
+                        <Inputs label="Primeiro Nome*" placeholder="Breno" type="text" htmlForId="name" register={register} error={errors.name?.message}/>
 
                         <Inputs label="Email*" placeholder="brenomateus36@gmail.com" type="email" htmlForId="email" register={register} error={errors.email?.message}/>
 
