@@ -1,16 +1,34 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Logo from "../../assets/logo-white.svg"
 import Footer from "../../components/footer"
-import { FieldValues, useForm } from "react-hook-form"
+import { useForm } from "react-hook-form"
+import { userLogin } from "../../store/login-store";
+import { userValidationLogin, UserRegisterLogin } from "../../schema/userValidationLogin";
+import { yupResolver } from "@hookform/resolvers/yup";
+import Inputs from "../../components/inputs";
 
 
 const Login = () => {
 
-    const {register, handleSubmit, formState: {errors}} = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm<UserRegisterLogin>({
+        resolver: yupResolver(userValidationLogin)
+    });
+    
+    const { checkUser } = userLogin();
 
-    const onSubmit = (data: FieldValues) => {
-        console.log(data)
-    }
+    const navigate = useNavigate();
+
+
+    const onSubmit = (data: UserRegisterLogin) => {
+        const isValidUser = checkUser(data.email, data.password);
+        
+        if (isValidUser) {
+            alert("Login bem-sucedido!"); 
+            navigate("/dashboard");
+        } else {
+            alert("Email ou senha incorretos!");
+        }
+    };
 
     return (
         <div>
@@ -25,21 +43,9 @@ const Login = () => {
                     <p className="text-sm">Digite seus dados de acesso no campo abaixo.</p>
                     
                     <div className="flex flex-col gap-6">
-                        <div className="flex flex-col">
-                            <label htmlFor="email">E-mail</label>
-                            <input type="email" id="email" className="bg-colorSecondary rounded-md p-2" placeholder="Digite seu e-mail" {...register("email", { 
-                            required: "O email é obrigatório", 
-                            pattern: { value: /^\S+@\S+$/i, message: "Email inválido" } 
-                            })}/>
-                            {errors.email && <p className="text-red-600 text-xs mt-1">{errors.email.message?.toString()}</p>}
-                        </div>
+                        <Inputs label="Email" placeholder="Digite seu email" type="email" htmlForId="email" register={register} error={errors.email?.message}/>
 
-                        <div className="flex flex-col">
-                            <label htmlFor="senha">Senha</label>
-                            <input type="password" id="senha" className="bg-colorSecondary rounded-md p-2" placeholder="Digite sua senha" {...register("senha", {required: "A senha é obrigatório"})}/>
-                            {errors.senha && <p className="text-red-600 text-xs mt-1">{errors.senha.message?.toString()}</p>}
-                            <a className="text-xs mt-2 underline cursor-pointer">Equeci a senha</a>
-                        </div>
+                        <Inputs label="Senha*" placeholder="Crie sua senha" type="password" htmlForId="password" register={register} error={errors.password?.message}/>
                     </div>
 
                     <button type="submit" className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90">Entrar</button>

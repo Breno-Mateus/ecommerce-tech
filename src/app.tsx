@@ -9,6 +9,7 @@ import EqupamentosAudio from "./pages/products/equipamento-audio";
 import Login from "./pages/login";
 import ProductScreen from "./pages/product-screen";
 import Register from "./pages/register";
+import Dashboard from "./pages/dashboard";
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path="/login" element={<Login />}/>
                 <Route path="/product-screen/:id" element={<ProductScreen />}/>
                 <Route path="/register" element={<Register />}/>
+                <Route path="/dashboard" element={<Dashboard />}/>
             </Routes>
         </Router>
     )

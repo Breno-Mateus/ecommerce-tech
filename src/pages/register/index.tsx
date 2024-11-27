@@ -1,20 +1,42 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../components/footer";
 import Logo from "../../assets/logo-white.svg";
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import Inputs from "../../components/inputs";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { userValidationRegister } from "../../schema/userValidationRegister";
+import { userValidationRegister, UserRegister } from "../../schema/userValidationRegister";
+import { userLogin, userProps } from "../../store/login-store";
 
 const Register = () => {
 
-    const {register, handleSubmit, formState: {errors}} = useForm({
+    const { addUser } = userLogin();
+
+    const navigate = useNavigate(); // Usando o hook useNavigate para navegação
+
+    const {register, handleSubmit, formState: {errors}} = useForm<UserRegister>({
         resolver: yupResolver(userValidationRegister)
     });
 
-    const onSubmit = (data: FieldValues) => {
-        console.log(data)
+    const onSubmit = (data: UserRegister) => {
+        const userData: userProps = {
+            fullname: data.fullname,
+            email: data.email,
+            phone: data.phone,
+            cep: data.cep,
+            neighborhood: data.neighborhood,
+            street: data.street,
+            number: data.number,
+            complement: data.complement,
+            password: data.password,
+        };
+
+        addUser(userData); // Adicionando o usuário no zustand e no localStorage
+
+        alert("Usuário cadastrado com sucesso!");
+
+        navigate("/login");
     };
+
 
     return (
         <div>
