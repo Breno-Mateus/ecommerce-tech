@@ -6,6 +6,7 @@ import { useLogin } from "../../store/login-store";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../components/inputs";
 import { UserRegisterLogin, userValidationLogin } from "../../schema/userValidationLogin";
+import { useCart } from "../../store/cart-store";
 
 
 const Login = () => {
@@ -16,6 +17,8 @@ const Login = () => {
     
     const { checkUser, loginUser } = useLogin();
 
+    const { productsCart } = useCart();
+
     const navigate = useNavigate();
 
 
@@ -25,7 +28,7 @@ const Login = () => {
         if (isValidUser) {
             loginUser(data.email, data.password); 
             alert("Login bem-sucedido!");
-            navigate("/dashboard");
+            navigate(`${productsCart.length > 0 ? "/payment" : "/dashboard"}`);
         } else {
             alert("Email ou senha incorretos!");
         }
