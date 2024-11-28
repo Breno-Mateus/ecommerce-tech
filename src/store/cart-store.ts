@@ -9,6 +9,7 @@ interface cartState {
     productsCart: cartProduct[];
     addProduct: (product: Product) => void;
     removeProduct: (id: number) => void;
+    restartCart: () => void;
     incrementQuantity: (id: number) => void;
     decrementQuantity: (id: number) => void;
     totalProduct: (id: number) => number;
@@ -37,6 +38,10 @@ export const useCart = create<cartState>((set, get) => ({
 
     removeProduct: (id) => set((state) => ({
         productsCart: state.productsCart.filter((product) => product.id !== id)
+    })),
+
+    restartCart: () => set(() => ({
+        productsCart: []
     })),
 
     incrementQuantity: (id) => set((state) => ({

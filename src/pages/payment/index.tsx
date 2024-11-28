@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/footer";
 import Logo from "../../assets/logo-white.svg";
 import { useCart } from "../../store/cart-store";
-
 import { useLogin } from "../../store/login-store";
-
 import { FaPix } from "react-icons/fa6";
 import { IoCard } from "react-icons/io5";
 import { FaMoneyBill } from "react-icons/fa";
@@ -24,10 +22,6 @@ const Payment = () => {
         setMethodPayment(method);
         setIsClicked(true);
         setIsButtonDisabled(false);
-    };
-
-    const handleTest = () => {
-        alert('deu certo');
     };
 
     return (
@@ -75,23 +69,23 @@ const Payment = () => {
                             <h3 className="font-bold">Forma de pagamneto</h3>
                             <div className="flex gap-8">
                                 <div className="flex flex-col gap-12">
-                                    <div className={`${isClicked && methodPayment === 'Pix' ? "text-blue-600" : "text-colorPrimary"} flex gap-4`}>
+                                    <div className={`${isClicked && methodPayment === 'Pix' ? "text-blue-600" : "text-colorPrimary"} flex gap-4 items-center`}>
                                         <FaPix />
                                         <button onClick={() => HandleMethodPayment('Pix')}>Pix</button>
                                     </div>
-                                    <div className={`${isClicked && methodPayment === 'Crédito' ? "text-blue-600" : "text-colorPrimary"} flex gap-4`}>
+                                    <div className={`${isClicked && methodPayment === 'Crédito' ? "text-blue-600" : "text-colorPrimary"} flex gap-4 items-center`}>
                                         <IoCard />
                                         <button onClick={() => HandleMethodPayment('Crédito')}>Crédito</button>
                                     </div>
                                 </div>
 
                                 <div className="flex flex-col gap-12">
-                                    <div className={`${isClicked && methodPayment === 'Debito' ? "text-blue-600" : "text-colorPrimary"} flex gap-4`}>
+                                    <div className={`${isClicked && methodPayment === 'Debito' ? "text-blue-600" : "text-colorPrimary"} flex gap-4 items-center`}>
                                         <IoCard />
                                         <button onClick={() => HandleMethodPayment('Debito')}>Debito</button>
                                     </div>
 
-                                    <div className={`${isClicked && methodPayment === 'Dinheiro' ? "text-blue-600" : "text-colorPrimary"} flex gap-4`}>
+                                    <div className={`${isClicked && methodPayment === 'Dinheiro' ? "text-blue-600" : "text-colorPrimary"} flex gap-4 items-center`}>
                                         <FaMoneyBill />
                                         <button onClick={() => HandleMethodPayment('Dinheiro')}>Dinheiro</button>
                                     </div>
@@ -121,7 +115,7 @@ const Payment = () => {
                             <h1>{methodPayment}</h1>
                         </div>
 
-                        <button onClick={handleTest} disabled={isButtonDisabled} className={`bg-colorPrimary rounded-md text-colorSecondary p-2 ${isButtonDisabled == true ? "bg-opacity-50 hover:cursor-not-allowed" : "bg-opacity-100 hover:cursor-pointer"} w-full flex items-center justify-center gap-6`}>Concluir pedido</button>
+                        <Link to="/finished" className={`bg-colorPrimary rounded-md text-colorSecondary p-2 ${isButtonDisabled == true ? "bg-opacity-50 hover:cursor-not-allowed" : "bg-opacity-100 hover:cursor-pointer"} w-full flex items-center justify-center gap-6`}><button disabled={isButtonDisabled}>Concluir pedido</button></Link>
                     </div>
                 </div>
             </div>
