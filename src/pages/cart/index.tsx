@@ -4,11 +4,14 @@ import Header from "../../components/header";
 import MenuNav from "../../components/menu-nav";
 import {useCart} from "../../store/cart-store";
 import { FaTrash } from "react-icons/fa";
+import { useLogin } from "../../store/login-store";
 
 
 const Cart = () => {
 
     const { productsCart, removeProduct, incrementQuantity, decrementQuantity, totalProduct, totalCart }  = useCart();
+
+    const { currentUser } = useLogin();
 
     return (
         <div>
@@ -66,7 +69,7 @@ const Cart = () => {
                             <p className="font-bold">R$ {totalCart()}</p>
                         </div>
 
-                        <Link to="/payment" className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-[20%] flex items-center justify-center gap-6">Continuar</Link>
+                        <Link to={`${currentUser ? "/payment" : "/login"}`} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-[20%] flex items-center justify-center gap-6">Continuar</Link>
                     </div>
                 </div>
             ) : (
