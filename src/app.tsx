@@ -10,6 +10,7 @@ import Login from "./pages/login";
 import ProductScreen from "./pages/product-screen";
 import Register from "./pages/register";
 import Dashboard from "./pages/dashboard";
+import Payment from "./pages/payment";
 
 const App = () => {
     return (
@@ -26,6 +27,7 @@ const App = () => {
                 <Route path="/product-screen/:id" element={<ProductScreen />}/>
                 <Route path="/register" element={<Register />}/>
                 <Route path="/dashboard" element={<Dashboard />}/>
+                <Route path="/payment" element={<Payment />}/>
             </Routes>
         </Router>
     )

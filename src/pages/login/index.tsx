@@ -2,10 +2,10 @@ import { Link, useNavigate } from "react-router-dom"
 import Logo from "../../assets/logo-white.svg"
 import Footer from "../../components/footer"
 import { useForm } from "react-hook-form"
-import { userLogin } from "../../store/login-store";
-import { userValidationLogin, UserRegisterLogin } from "../../schema/userValidationLogin";
+import { useLogin } from "../../store/login-store";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../components/inputs";
+import { UserRegisterLogin, userValidationLogin } from "../../schema/userValidationLogin";
 
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
         resolver: yupResolver(userValidationLogin)
     });
     
-    const { checkUser, loginUser } = userLogin();
+    const { checkUser, loginUser } = useLogin();
 
     const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ const Login = () => {
                     <div className="flex flex-col gap-6">
                         <Inputs label="Email" placeholder="Digite seu email" type="email" htmlForId="email" register={register} error={errors.email?.message}/>
 
-                        <Inputs label="Senha*" placeholder="Crie sua senha" type="password" htmlForId="password" register={register} error={errors.password?.message}/>
+                        <Inputs label="Senha" placeholder="Crie sua senha" type="password" htmlForId="password" register={register} error={errors.password?.message}/>
                     </div>
 
                     <button type="submit" className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90">Entrar</button>

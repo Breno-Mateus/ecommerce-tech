@@ -10,6 +10,7 @@ export default {
         colorPrimary: '#000',
         colorSecondary: '#fff',
         colorGray: '#e8e9eb',
+        colorTextGray: '#A3A3A3',
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif']

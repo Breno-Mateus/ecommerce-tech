@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import MenuNav from "../../components/menu-nav";
@@ -65,7 +66,7 @@ const Cart = () => {
                             <p className="font-bold">R$ {totalCart()}</p>
                         </div>
 
-                        <button className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-[20%] flex items-center justify-center gap-6">Continuar</button>
+                        <Link to="/payment" className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-[20%] flex items-center justify-center gap-6">Continuar</Link>
                     </div>
                 </div>
             ) : (

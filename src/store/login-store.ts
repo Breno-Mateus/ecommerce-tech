@@ -21,7 +21,7 @@ interface loginState {
     logoutUser: () => void;
 }
 
-export const userLogin = create<loginState>((set) => ({
+export const useLogin = create<loginState>((set) => ({
     users: JSON.parse(localStorage.getItem('users') || '[]'),
     
     currentUser: JSON.parse(localStorage.getItem("currentUser") || "null"),

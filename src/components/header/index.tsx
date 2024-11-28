@@ -8,7 +8,7 @@ import { BsPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import CartCountIcon from "../cart-count-icon";
 import { useCart } from "../../store/cart-store";
-import { userLogin } from "../../store/login-store";
+import { useLogin } from "../../store/login-store";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
@@ -17,7 +17,7 @@ import { FaCircleUser } from "react-icons/fa6";
 const Header = () => {
 
     const { productsCart } = useCart();
-    const { currentUser } = userLogin();
+    const { currentUser } = useLogin();
     const [ userPanel, setUserPanel ] = useState(false);
 
     const handlePanel = () => {

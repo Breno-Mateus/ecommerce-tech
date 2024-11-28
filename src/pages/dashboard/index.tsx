@@ -1,14 +1,14 @@
 import Header from "../../components/header";
 import MenuNav from "../../components/menu-nav";
 import Footer from "../../components/footer";
-import { userLogin } from "../../store/login-store";
+import { useLogin } from "../../store/login-store";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
 const Dashboard = () => {
 
-    const { currentUser, logoutUser } = userLogin();
+    const { currentUser, logoutUser } = useLogin();
 
     return (
         <>

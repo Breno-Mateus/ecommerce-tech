@@ -5,11 +5,11 @@ import { useForm } from "react-hook-form";
 import Inputs from "../../components/inputs";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { userValidationRegister, UserRegister } from "../../schema/userValidationRegister";
-import { userLogin, userProps } from "../../store/login-store";
+import { useLogin, userProps } from "../../store/login-store";
 
 const Register = () => {
 
-    const { addUser } = userLogin();
+    const { addUser } = useLogin();
 
     const navigate = useNavigate();
 
