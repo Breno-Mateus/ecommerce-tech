@@ -6,7 +6,6 @@ import {useCart} from "../../store/cart-store";
 import { FaTrash } from "react-icons/fa";
 import { useLogin } from "../../store/login-store";
 
-
 const Cart = () => {
 
     const { productsCart, removeProduct, incrementQuantity, decrementQuantity, totalProduct, totalCart }  = useCart();
@@ -73,15 +72,45 @@ const Cart = () => {
                     </div>
                 </div>
             ) : (
-            
-                <div className="h-screen p-4 flex items-center justify-center">
-                    <div className="bg-colorGray flex items-center justify-between gap-8 p-8 rounded-md shadow-lg w-screen">
-                        <p>Adicione um produto na sua cesta</p>
+                <div className="flex flex-col gap-8 p-8">
+                    <div className="bg-colorGray flex items-center justify-between gap-8 p-2 rounded-md shadow-lg">
+                        <div className="w-[40%] text-center">
+                            <p>Produto</p>
+                        </div>
+                        <p>Quantidade</p>
+                        <p className="mr-2">Preço</p>
+                    </div>
+
+                    <div className="bg-colorGray flex items-center justify-center gap-8 p-8 rounded-md shadow-lg">
+                        <p>Ainda não há itens no carrinho!</p>
+                    </div>
+
+                    <div className="bg-colorGray flex flex-col gap-4 rounded-md shadow-lg p-8">
+                        <h3 className="font-bold">Resumo do pedido:</h3>
+                        
+                        <div className="flex flex-col border-b border-colorPrimary">
+                            <div className="flex justify-between">
+                                {productsCart.length === 1 ? (
+                                    <p>{productsCart.length} produto</p>
+                                ) : (<p>{productsCart.length} produtos</p>)}
+                                <p>R$ {totalCart()}</p>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="text-green-700">frete</p>
+                                <p className="text-green-700">grátis</p>
+                            </div>
+                        </div>
+
+                        <div className="flex justify-between border-b border-colorPrimary">
+                            <p className="font-bold">Total</p>
+                            <p className="font-bold">R$ {totalCart()}</p>
+                        </div>
+
+                        <button className="bg-colorPrimary rounded-md text-colorSecondary p-2 w-[20%] flex items-center justify-center gap-6 bg-opacity-50 hover:cursor-not-allowed">Continuar</button>
                     </div>
                 </div>
-                
-                )}
-            
+                )
+            }
             
             <Footer />
         </div>
