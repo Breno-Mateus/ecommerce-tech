@@ -1,13 +1,12 @@
-import { Link, useNavigate } from "react-router-dom"
-import Logo from "../../assets/logo-white.svg"
-import Footer from "../../components/footer"
-import { useForm } from "react-hook-form"
+import { Link, useNavigate } from "react-router-dom";
+import Footer from "../../components/footer";
+import { useForm } from "react-hook-form";
 import { useLogin } from "../../store/login-store";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Inputs from "../../components/inputs";
 import { UserRegisterLogin, userValidationLogin } from "../../schema/userValidationLogin";
 import { useCart } from "../../store/cart-store";
-
+import HeaderSecondary from "../../components/header-secondary";
 
 const Login = () => {
 
@@ -36,9 +35,7 @@ const Login = () => {
 
     return (
         <div>
-            <header className="bg-colorPrimary flex items-center justify-center p-2">
-                <Link to="/"><img src={Logo} className="h-12"/></Link>
-            </header>
+            <HeaderSecondary />
         
             <div className="flex justify-center items-center h-screen">
                 <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 w-1/3" onSubmit={handleSubmit(onSubmit)}>

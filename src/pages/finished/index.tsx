@@ -1,8 +1,8 @@
 import Footer from "../../components/footer";
-import Logo from "../../assets/logo-white.svg";
 import { Link } from "react-router-dom";
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { useCart } from "../../store/cart-store";
+import HeaderSecondary from "../../components/header-secondary";
 
 const Finished = () => {
 
@@ -10,9 +10,7 @@ const Finished = () => {
 
     return (
         <div>
-            <header className="bg-colorPrimary flex items-center justify-center p-2">
-                <Link to="/"><img src={Logo} className="h-12"/></Link>
-            </header>
+            <HeaderSecondary />
 
             <div className="h-screen flex items-center justify-center">
                 <div className="bg-colorGray w-[30%] h-[40%] flex flex-col items-center justify-center p-4 gap-8 rounded-md shadow-md">

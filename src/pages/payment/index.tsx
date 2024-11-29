@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer";
-import Logo from "../../assets/logo-white.svg";
 import { useCart } from "../../store/cart-store";
 import { useLogin } from "../../store/login-store";
 import { FaPix } from "react-icons/fa6";
 import { IoCard } from "react-icons/io5";
 import { FaMoneyBill } from "react-icons/fa";
 import { useState } from "react";
+import HeaderSecondary from "../../components/header-secondary";
 
 const Payment = () => {
 
@@ -26,9 +26,7 @@ const Payment = () => {
 
     return (
         <div>
-            <header className="bg-colorPrimary flex items-center justify-center p-2">
-                <Link to="/"><img src={Logo} className="h-12"/></Link>
-            </header>
+            <HeaderSecondary />
 
             <div className="mx-28 my-12">
                 <div className="bg-colorGray flex justify-between p-4 min-h-screen rounded-lg shadow-md">
