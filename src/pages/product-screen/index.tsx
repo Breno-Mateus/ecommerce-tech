@@ -5,19 +5,31 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { useCart } from "../../store/cart-store";
 import { useParams } from "react-router-dom";
 import products from "../../data/products";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import CardConfirmation from "../../components/card-confirmation";
 
 const ProductScreen = () => {
 
     const { id } = useParams();
     const idProduct = Number(id);
 
+    const [ message, setMessage ] = useState(false);
+
     const {addProduct} = useCart();
 
     const selectedProduct = products.find((product) => product.id === idProduct)!;
 
+    const handleAddProduct = () => {
+        addProduct(selectedProduct);
+        setMessage(true);
+        setTimeout(() => {
+            setMessage(false);
+        }, 3000);
+    };
+
     return(
         <div>
+            {message && <CardConfirmation name={selectedProduct.name}/>}
             <Header />
             <MenuNav />
             <section className="h-screen flex gap-8 mx-28 my-12">
@@ -42,7 +54,7 @@ const ProductScreen = () => {
                         </div>
                     </div>
             
-                    <Link to="/cart"><button onClick={() => addProduct(selectedProduct)} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-full flex items-center justify-center gap-6"> <FaShoppingBasket /> Comprar</button></Link>
+                    <button onClick={handleAddProduct} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-full flex items-center justify-center gap-6"> <FaShoppingBasket /> Comprar</button>
                 </div>
             </section>
             <Footer />
