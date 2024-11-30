@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const BoxProduct = ({id, name, price, image} : BoxProps ) => {
 
     return (
-        <div className="bg-colorGray flex justify-around flex-col h-96 w-80 gap-4 rounded-lg shadow-xl">
+        <div className="bg-colorGray flex justify-around flex-col h-96 w-72 gap-4 rounded-lg shadow-xl">
             <div className="h-1/2 p-2">
                 <img src={image} className="w-full h-full object-contain"/>
             </div>

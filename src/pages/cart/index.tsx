@@ -17,7 +17,7 @@ const Cart = () => {
             <Header />
             <MenuNav />
             {productsCart.length > 0 ? (
-                <div className="flex flex-col gap-8 p-8">
+                <section className="flex flex-col gap-8 mx-28 my-12">
                     <div className="bg-colorGray flex items-center justify-between gap-8 p-2 rounded-md shadow-lg">
                         <div className="w-[40%] text-center">
                             <p>Produto</p>
@@ -70,9 +70,9 @@ const Cart = () => {
 
                         <Link to={`${currentUser ? "/payment" : "/login"}`} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-[20%] flex items-center justify-center gap-6">Continuar</Link>
                     </div>
-                </div>
+                </section>
             ) : (
-                <div className="flex flex-col gap-8 p-8">
+                <section className="flex flex-col gap-8 mx-28 my-12">
                     <div className="bg-colorGray flex items-center justify-between gap-8 p-2 rounded-md shadow-lg">
                         <div className="w-[40%] text-center">
                             <p>Produto</p>
@@ -108,13 +108,13 @@ const Cart = () => {
 
                         <button className="bg-colorPrimary rounded-md text-colorSecondary p-2 w-[20%] flex items-center justify-center gap-6 bg-opacity-50 hover:cursor-not-allowed">Continuar</button>
                     </div>
-                </div>
+                </section>
                 )
             }
             
             <Footer />
         </div>
     )
-}
+};
 
 export default Cart;

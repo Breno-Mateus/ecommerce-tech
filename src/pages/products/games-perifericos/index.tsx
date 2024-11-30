@@ -1,25 +1,17 @@
-import BoxProduct from "../../../components/box-product"
-import Footer from "../../../components/footer"
-import Header from "../../../components/header"
-import MenuNav from "../../../components/menu-nav"
-import products from "../../../data/products"
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import MenuNav from "../../../components/menu-nav";
+import SectionProducts from "../../../components/section-products";
 
 const PerifericosGame = () => {
-    
-    const filteredProducts = products.filter(product => product.category === 'Periféricos de games')
-
     return (
-        <div className="">
+        <div>
             <Header />
             <MenuNav />
-            <div className="flex p-24 gap-10 flex-wrap justify-center">
-                {filteredProducts.map((product) => (
-                    <BoxProduct id={product.id} name={product.name} price={product.price} image={product.image}/>
-                ))}
-            </div>
+            <SectionProducts filterProducts={true} category="Periféricos de games"/>
             <Footer />
         </div>
     )
-}
+};
 
-export default PerifericosGame
+export default PerifericosGame;

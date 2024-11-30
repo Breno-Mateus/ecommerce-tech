@@ -36,8 +36,7 @@ const Login = () => {
     return (
         <div>
             <HeaderSecondary />
-        
-            <div className="flex justify-center items-center h-screen">
+            <section className="flex justify-center items-center h-screen">
                 <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 w-1/3" onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="font-extrabold text-xl">Login</h2>
                     
@@ -53,8 +52,7 @@ const Login = () => {
 
                     <Link to="/register" className="text-sm text-center cursor-pointer">Criar conta</Link>
                 </form>
-            </div>
-
+            </section>
             <Footer />
         </div>
     )

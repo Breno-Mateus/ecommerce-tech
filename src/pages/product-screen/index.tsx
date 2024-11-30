@@ -16,13 +16,11 @@ const ProductScreen = () => {
 
     const selectedProduct = products.find((product) => product.id === idProduct)!;
 
-    console.log(selectedProduct);
-
     return(
         <div>
             <Header />
             <MenuNav />
-            <div className="h-screen flex gap-8 p-8">
+            <section className="h-screen flex gap-8 mx-28 my-12">
                 <div className="bg-colorGray flex flex-col p-10 items-center justify-center rounded-lg w-[70%] shadow-xl">
                     <img src={selectedProduct?.image} className="w-[70%] h-[70%] object-contain"/>
                 </div>
@@ -46,7 +44,7 @@ const ProductScreen = () => {
             
                     <Link to="/cart"><button onClick={() => addProduct(selectedProduct)} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-full flex items-center justify-center gap-6"> <FaShoppingBasket /> Comprar</button></Link>
                 </div>
-            </div>
+            </section>
             <Footer />
         </div>
     )

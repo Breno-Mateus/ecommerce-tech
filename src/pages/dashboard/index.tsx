@@ -14,8 +14,7 @@ const Dashboard = () => {
         <>
             <Header />
             <MenuNav />
-            
-            <div className="p-12 flex items-center justify-center">
+            <section className="flex items-center justify-center mx-28 my-12">
                 <div className="bg-colorGray w-[40%] p-8 flex flex-col items-center justify-center gap-12 rounded-xl shadow-lg">
 
                     <FaUserCircle className="text-[10rem]"/>
@@ -48,8 +47,7 @@ const Dashboard = () => {
                         <Link to="/" className="text-red-700 underline" onClick={() => logoutUser()}>Sair</Link>
                     </div>
                 </div>
-            </div>
-
+            </section>
             <Footer />
         </>
     )

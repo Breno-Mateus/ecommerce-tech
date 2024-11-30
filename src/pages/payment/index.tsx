@@ -27,8 +27,7 @@ const Payment = () => {
     return (
         <div>
             <HeaderSecondary />
-
-            <div className="mx-28 my-12">
+            <section className="mx-28 my-12">
                 <div className="bg-colorGray flex justify-between p-4 min-h-screen rounded-lg shadow-md">
                     <div className="flex flex-col w-[40%] justify-around">
                         {/*Lista de pedidos*/}
@@ -116,8 +115,7 @@ const Payment = () => {
                         <Link to="/finished" className={`bg-colorPrimary rounded-md text-colorSecondary p-2 ${isButtonDisabled == true ? "bg-opacity-50 hover:cursor-not-allowed" : "bg-opacity-100 hover:cursor-pointer"} w-full flex items-center justify-center gap-6`}><button disabled={isButtonDisabled}>Concluir pedido</button></Link>
                     </div>
                 </div>
-            </div>
-
+            </section>
             <Footer />
         </div>
     )

@@ -1,25 +1,17 @@
-import BoxProduct from "../../../components/box-product"
-import Footer from "../../../components/footer"
-import Header from "../../../components/header"
-import MenuNav from "../../../components/menu-nav"
-import products from "../../../data/products"
+import Footer from "../../../components/footer";
+import Header from "../../../components/header";
+import MenuNav from "../../../components/menu-nav";
+import SectionProducts from "../../../components/section-products";
 
 const EqupamentosAudio = () => {
-    
-    const filteredProducts = products.filter(product => product.category === 'Equipamentos de áudio')
-
     return (
-        <div className="">
+        <div>
             <Header />
             <MenuNav />
-            <div className="flex p-24 gap-10 flex-wrap justify-center">
-                {filteredProducts.map((product) => (
-                    <BoxProduct id={product.id} name={product.name} price={product.price} image={product.image}/>
-                ))}
-            </div>
+            <SectionProducts filterProducts={true} category="Equipamentos de áudio"/>
             <Footer />
         </div>
     )
-}
+};
 
-export default EqupamentosAudio
+export default EqupamentosAudio;

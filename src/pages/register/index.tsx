@@ -1,11 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/footer";
-import Logo from "../../assets/logo-white.svg";
 import { useForm } from "react-hook-form";
 import Inputs from "../../components/inputs";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { userValidationRegister, UserRegister } from "../../schema/userValidationRegister";
 import { useLogin, userProps } from "../../store/login-store";
+import HeaderSecondary from "../../components/header-secondary";
 
 const Register = () => {
 
@@ -40,11 +40,8 @@ const Register = () => {
 
     return (
         <div>
-            <header className="bg-colorPrimary flex items-center justify-center p-2">
-                <Link to="/"><img src={Logo} className="h-12"/></Link>
-            </header>
-
-            <div className="flex justify-center items-center p-8">
+            <HeaderSecondary />
+            <section className="flex justify-center items-center my-12">
                 <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 w-[50%]" onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="font-extrabold text-xl">Cadastro de Usuário</h2>
 
@@ -74,8 +71,7 @@ const Register = () => {
 
                     <button type="submit" className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90">Cadastrar</button>
                 </form>
-            </div>
-            
+            </section>
             <Footer />
         </div>
     )
