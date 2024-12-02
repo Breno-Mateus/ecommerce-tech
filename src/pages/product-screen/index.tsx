@@ -5,15 +5,14 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { useCart } from "../../store/cart-store";
 import { useParams } from "react-router-dom";
 import products from "../../data/products";
-import { useState } from "react";
-import CardConfirmation from "../../components/card-confirmation";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductScreen = () => {
 
     const { id } = useParams();
-    const idProduct = Number(id);
 
-    const [ message, setMessage ] = useState(false);
+    const idProduct = Number(id);
 
     const {addProduct} = useCart();
 
@@ -21,15 +20,21 @@ const ProductScreen = () => {
 
     const handleAddProduct = () => {
         addProduct(selectedProduct);
-        setMessage(true);
-        setTimeout(() => {
-            setMessage(false);
-        }, 3000);
+        toast.success(`1 "${selectedProduct.name}" foi adicionado(a) ao carrinho!`, {
+            position: "top-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
     };
 
     return(
         <div>
-            {message && <CardConfirmation name={selectedProduct.name}/>}
             <Header />
             <MenuNav />
             <section className="h-screen flex gap-8 mx-28 my-12">
@@ -58,6 +63,7 @@ const ProductScreen = () => {
                 </div>
             </section>
             <Footer />
+            <ToastContainer/>
         </div>
     )
 };

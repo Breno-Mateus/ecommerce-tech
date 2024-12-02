@@ -6,6 +6,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { userValidationRegister, UserRegister } from "../../schema/userValidationRegister";
 import { useLogin, userProps } from "../../store/login-store";
 import HeaderSecondary from "../../components/header-secondary";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
 
@@ -30,11 +32,20 @@ const Register = () => {
             password: data.password,
         };
 
-        addUser(userData); // Adicionando o usuário no zustand e no localStorage
+        addUser(userData);
 
-        alert("Usuário cadastrado com sucesso!");
-
-        navigate("/login");
+        toast.success(`Usuário cadastrado com sucesso!`, {
+            position: "top-left",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+            onClose: () => navigate("/login"),
+        });
     };
 
 
@@ -73,6 +84,7 @@ const Register = () => {
                 </form>
             </section>
             <Footer />
+            <ToastContainer/>
         </div>
     )
 };

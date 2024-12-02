@@ -7,6 +7,8 @@ import Inputs from "../../components/inputs";
 import { UserRegisterLogin, userValidationLogin } from "../../schema/userValidationLogin";
 import { useCart } from "../../store/cart-store";
 import HeaderSecondary from "../../components/header-secondary";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 
@@ -25,11 +27,31 @@ const Login = () => {
         const isValidUser = checkUser(data.email, data.password);
         
         if (isValidUser) {
-            loginUser(data.email, data.password); 
-            alert("Login bem-sucedido!");
-            navigate(`${productsCart.length > 0 ? "/payment" : "/dashboard"}`);
+            loginUser(data.email, data.password);
+            toast.success(`Login bem-sucedido`, {
+                position: "top-left",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+                onClose: () => navigate(`${productsCart.length > 0 ? "/payment" : "/dashboard"}`),
+            });
         } else {
-            alert("Email ou senha incorretos!");
+            toast.error('Email ou senha incorretos!', {
+                position: "top-left",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+            });
         }
     };
 
@@ -54,6 +76,7 @@ const Login = () => {
                 </form>
             </section>
             <Footer />
+            <ToastContainer/>
         </div>
     )
 }
