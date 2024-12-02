@@ -13,12 +13,14 @@ import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { FaCircleUser } from "react-icons/fa6";
+import CardSearch from "../../components/card-search";
 
 const Header = () => {
 
     const { productsCart } = useCart();
     const { currentUser } = useLogin();
     const [ userPanel, setUserPanel ] = useState(false);
+    const [ search, setSearch ] = useState('');
 
     const handlePanel = () => {
         if(userPanel === false){
@@ -29,13 +31,17 @@ const Header = () => {
     };
 
     return (
+        <>
         <header className="flex items-center justify-around p-2 h-16">
             <Link to="/"><img src={Logo} className="h-12"/></Link>
             
-            <div className="bg-colorGray flex items-center p-2 rounded-md gap-2">
-                <FaMicrophone />
-                <input type="text" placeholder="pesquisar" className="bg-transparent"/>
-                <FaSearch />
+            <div className="flex flex-col">
+                <div className="bg-colorGray flex items-center p-2 rounded-md gap-2">
+                    <FaMicrophone />
+                    <input type="text" placeholder="pesquisar" className="bg-transparent focus:outline-none" onChange={(e) => setSearch(e.target.value)}/>
+                    <FaSearch />
+                </div>
+                <CardSearch search={search}/>
             </div>
 
             <div className="flex items-center gap-4">
@@ -81,6 +87,7 @@ const Header = () => {
                 )}
             </div>
         </header>
+        </>
     )
 };
 
