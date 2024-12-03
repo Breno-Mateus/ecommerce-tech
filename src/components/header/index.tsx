@@ -36,7 +36,7 @@ const Header = () => {
     }, [id]);
 
     return (
-        <header className="flex items-center justify-around p-2 h-16">
+        <header className="hidden md:flex items-center justify-around p-2 h-16">
             <Link to="/"><img src={Logo} className="h-12"/></Link>
             
             <div className="flex flex-col">
