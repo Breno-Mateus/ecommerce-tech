@@ -36,7 +36,6 @@ const Header = () => {
     }, [id]);
 
     return (
-        <>
         <header className="flex items-center justify-around p-2 h-16">
             <Link to="/"><img src={Logo} className="h-12"/></Link>
             
@@ -57,17 +56,9 @@ const Header = () => {
                     <div className="flex items-end">
                         {userPanel === true ? (
                             <div className="flex flex-col items-center justify-center">
-                                <div className="flex mt-16">
+                                <div className="flex">
                                     <BsPersonFill className="text-2xl"/>
                                     <button onClick={handlePanel}><IoIosArrowUp /></button>
-                                </div>
-                                
-                                <div className="bg-colorGray h-16 p-2 rounded-md z-10 flex flex-col gap-4">
-                                    <p className="text-xs">Olá, <span className="font-semibold">{currentUser.name}</span>!</p>
-                                    <div className="flex gap-2 items-center justify-center">
-                                        <FaCircleUser className="text-[12px]"/>
-                                        <Link to="/dashboard" className="text-xs">Meu espaço</Link>
-                                    </div>
                                 </div>
                             </div>
                         ): (
@@ -76,7 +67,15 @@ const Header = () => {
                                 <button onClick={handlePanel}><IoIosArrowDown /></button>
                             </>
                         )}
-            
+                        {userPanel === true && (
+                            <div className="bg-colorGray h-16 p-2 rounded-md z-10 flex flex-col gap-4 fixed top-[3rem] border-[1px] border-colorTextGray">
+                                <p className="text-xs">Olá, <span className="font-semibold">{currentUser.name}</span>!</p>
+                                <div className="flex gap-2 items-center justify-center">
+                                    <FaCircleUser className="text-[12px]"/>
+                                    <Link to="/dashboard" className="text-xs">Meu espaço</Link>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ) : (
                     <Link to="/login"><BsPersonFill className="text-2xl"/></Link>
@@ -92,7 +91,6 @@ const Header = () => {
                 )}
             </div>
         </header>
-        </>
     )
 };
 
