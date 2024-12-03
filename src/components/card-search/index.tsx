@@ -10,7 +10,7 @@ const CardSearch = ({search} : CardSearchProps) => {
         <div className={`${search.length > 2 && productsSearch.length > 0 ? "absolute" : "hidden"} top-[4rem]`}>
             <div className="bg-colorGray rounded-md w-[23.75rem] flex flex-col gap-4 items-center p-2 border-[1px] border-colorTextGray">
                 {productsSearch.map((product) => 
-                    <Link to={`/product-screen/${product.id}`} className="flex gap-4 items-center">
+                    <Link key={product.id} to={`/product-screen/${product.id}`} className="flex gap-4 items-center">
                         <img src={product.image} className="w-[15%]"/>
                         <p>{product.name}</p>
                     </Link>

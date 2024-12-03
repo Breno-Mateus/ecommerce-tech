@@ -26,7 +26,7 @@ const Cart = () => {
                         <p className="mr-2">Preço</p>
                     </div>
                     {productsCart.map((listaprodutos) => (
-                        <div className="bg-colorGray flex items-center justify-between gap-8 p-8 rounded-md shadow-lg">
+                        <div key={listaprodutos.id} className="bg-colorGray flex items-center justify-between gap-8 p-8 rounded-md shadow-lg">
                             <img src={listaprodutos.image} className="h-24"/>
                             <p>{listaprodutos.name}</p>
                             <div className="flex gap-2 text-colorSecondary">
@@ -111,7 +111,6 @@ const Cart = () => {
                 </section>
                 )
             }
-            
             <Footer />
         </div>
     )

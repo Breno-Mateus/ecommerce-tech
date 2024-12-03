@@ -12,13 +12,13 @@ const SectionProducts = ({filterProducts, category} : sectionProductsProps) => {
                 {filterProducts === true ? (
                     <>
                         {filteredProducts.map((product) => (
-                            <BoxProduct id={product.id} name={product.name} price={product.price} image={product.image}/>
+                            <BoxProduct key={product.id} id={product.id} name={product.name} price={product.price} image={product.image}/>
                         ))}
                     </>
                 ) : (
                     <>
                         {products.map((product) => (
-                            <BoxProduct id={product.id} name={product.name} price={product.price} image={product.image}/>
+                            <BoxProduct key={product.id} id={product.id} name={product.name} price={product.price} image={product.image}/>
                         ))}
                     </>
                 )}
