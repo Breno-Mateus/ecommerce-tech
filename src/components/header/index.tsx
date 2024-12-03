@@ -5,11 +5,11 @@ import { FaRegHeart } from "react-icons/fa";
 import { MdHeadsetMic } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { BsPersonFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CartCountIcon from "../cart-count-icon";
 import { useCart } from "../../store/cart-store";
 import { useLogin } from "../../store/login-store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { FaCircleUser } from "react-icons/fa6";
@@ -21,6 +21,7 @@ const Header = () => {
     const { currentUser } = useLogin();
     const [ userPanel, setUserPanel ] = useState(false);
     const [ search, setSearch ] = useState('');
+    const { id } = useParams();
 
     const handlePanel = () => {
         if(userPanel === false){
@@ -30,6 +31,10 @@ const Header = () => {
         }
     };
 
+    useEffect(() => {
+        setSearch('');
+    }, [id]);
+
     return (
         <>
         <header className="flex items-center justify-around p-2 h-16">
@@ -38,7 +43,7 @@ const Header = () => {
             <div className="flex flex-col">
                 <div className="bg-colorGray flex items-center p-2 rounded-md gap-2">
                     <FaMicrophone />
-                    <input type="text" placeholder="pesquisar" className="bg-transparent focus:outline-none" onChange={(e) => setSearch(e.target.value)}/>
+                    <input type="text" value={search} placeholder="pesquisar" className="bg-transparent focus:outline-none" onChange={(e) => setSearch(e.target.value)}/>
                     <FaSearch />
                 </div>
                 <CardSearch search={search}/>
