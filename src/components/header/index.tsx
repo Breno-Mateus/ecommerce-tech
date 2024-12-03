@@ -68,7 +68,7 @@ const Header = () => {
                             </>
                         )}
                         {userPanel === true && (
-                            <div className="bg-colorGray h-16 p-2 rounded-md z-10 flex flex-col gap-4 fixed top-[3rem] border-[1px] border-colorTextGray">
+                            <div className="bg-colorGray h-16 p-2 rounded-md z-10 flex flex-col gap-4 absolute top-[3rem] border-[1px] border-colorTextGray">
                                 <p className="text-xs">Olá, <span className="font-semibold">{currentUser.name}</span>!</p>
                                 <div className="flex gap-2 items-center justify-center">
                                     <FaCircleUser className="text-[12px]"/>
