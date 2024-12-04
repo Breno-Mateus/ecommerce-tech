@@ -29,9 +29,9 @@ const Payment = () => {
             <HeaderSecondary />
             <section className="mx-12 md:mx-28 my-12">
                 <div className="bg-colorGray flex flex-col gap-8 md:flex-row md:justify-between p-4 md:min-h-screen rounded-lg shadow-md">
-                    <div className="flex flex-col gap-8 md:gap-0 md:w-[40%] justify-around">
+                    <div className="flex flex-col md:justify-around gap-8 md:w-[40%]">
                         {/*Lista de pedidos*/}
-                        <div className="flex flex-col gap-8 h-[40%]">
+                        <div className="flex flex-col gap-8 h-[30%]">
                             <div className="flex gap-2">
                                 <h3 className="font-bold">Seu pedido</h3>
                                 <h3 className="text-colorTextGray">{productsCart.reduce((sum, product) => {
@@ -42,11 +42,11 @@ const Payment = () => {
                             <div className="flex flex-col gap-8 overflow-y-scroll h-[55%]">
                                 {productsCart.map((product) => (
                                     <div key={product.id} className="flex gap-8">
-                                        <div>
-                                            <img src={product.image} className="w-44"/>
+                                        <div className="w-[40%] md:w-auto">
+                                            <img src={product.image} className="md:w-44"/>
                                         </div>
 
-                                        <div className="flex flex-col justify-between">
+                                        <div className="flex flex-col justify-between w-[60%] md:w-auto">
                                             <p>{product.name} - x{product.quantity}</p>
                                             <p>R$ {product.price}</p>
                                         </div>
