@@ -1,8 +1,8 @@
-import Promo from "../../assets/promo.png"
+import Promo from "../../assets/promo.png";
 
 const CardPromo = () => {
     return (
-        <div className="flex justify-center p-4 h-svh bg-colorGray">
+        <div className="hidden md:flex justify-center p-4 h-svh bg-colorGray">
             <div className="mt-24">
                 <h3 className="text-2xl font-bold">Xiaomi Mi Notebook Air 12.5</h3>
                 <ul className="list-disc list-inside">
@@ -27,6 +27,6 @@ const CardPromo = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CardPromo
+export default CardPromo;
