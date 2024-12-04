@@ -27,9 +27,9 @@ const Payment = () => {
     return (
         <div>
             <HeaderSecondary />
-            <section className="mx-28 my-12">
-                <div className="bg-colorGray flex justify-between p-4 min-h-screen rounded-lg shadow-md">
-                    <div className="flex flex-col w-[40%] justify-around">
+            <section className="mx-12 md:mx-28 my-12">
+                <div className="bg-colorGray flex flex-col gap-8 md:flex-row md:justify-between p-4 md:min-h-screen rounded-lg shadow-md">
+                    <div className="flex flex-col gap-8 md:gap-0 md:w-[40%] justify-around">
                         {/*Lista de pedidos*/}
                         <div className="flex flex-col gap-8 h-[40%]">
                             <div className="flex gap-2">
@@ -91,7 +91,7 @@ const Payment = () => {
                         </div>
                     </div>
 
-                    <div className="w-[50%] h-[30%] bg-colorSecondary p-6 flex flex-col gap-4 rounded-md">
+                    <div className="md:w-[50%] md:h-[30%] bg-colorSecondary p-6 flex flex-col gap-4 rounded-md">
                         <div className="flex justify-between">
                             <h1 className="text-xl font-semibold">Total</h1>
                             <h1 className="text-xl font-semibold">R$ {totalCart()}</h1>
