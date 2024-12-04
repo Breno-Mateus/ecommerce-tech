@@ -59,7 +59,7 @@ const Login = () => {
         <div>
             <HeaderSecondary />
             <section className="flex justify-center items-center h-screen">
-                <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 w-1/3" onSubmit={handleSubmit(onSubmit)}>
+                <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 md:w-1/3" onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="font-extrabold text-xl">Login</h2>
                     
                     <p className="text-sm">Digite seus dados de acesso no campo abaixo.</p>
