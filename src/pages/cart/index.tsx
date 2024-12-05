@@ -5,6 +5,7 @@ import MenuNav from "../../components/menu-nav";
 import {useCart} from "../../store/cart-store";
 import { FaTrash } from "react-icons/fa";
 import { useLogin } from "../../store/login-store";
+import HeaderMobile from "../../components/header-mobile";
 
 const Cart = () => {
 
@@ -17,27 +18,28 @@ const Cart = () => {
     }
 
     return (
-        <div>
+        <div className="flex flex-col min-h-screen justify-between">
             <Header />
+            <HeaderMobile />
             <MenuNav />
             {productsCart.length > 0 ? (
-                <section className="flex flex-col gap-8 mx-28 my-12 min-h-screen justify-center">
+                <section className="flex flex-col gap-8 mx-2 md:mx-28 my-12 justify-center">
                     <div className="bg-colorGray flex flex-col gap-8 rounded-md shadow-md p-4">
                         <div className="flex justify-between">
-                            <h1 className="font-semibold w-[50%]">Seu carrinho ({productsCart.length})</h1>
-                            <h1 className="font-semibold flex justify-center w-[25%]">Quantidade</h1>
-                            <h1 className="font-semibold flex justify-end w-[25%]">Preço</h1>
+                            <h1 className="font-semibold text-sm w-[50%]">Seu carrinho ({productsCart.length})</h1>
+                            <h1 className="font-semibold text-sm flex justify-center w-[25%]">Quantidade</h1>
+                            <h1 className="font-semibold text-sm flex justify-end w-[25%]">Preço</h1>
                         </div>
 
                         {productsCart.map((product) => (
-                        <div key={product.id} className={`flex items-center justify-between pb-4 ${productsCart.length > 1 ? "border-b-[1px] border-colorTextGray" : "border-none"}`}>
-                            <div className="flex gap-4 w-[50%]">
-                                <img src={product.image} className="w-24"/>
+                        <div key={product.id} className="flex items-center justify-between pb-4 border-b-[1px] border-colorTextGray">
+                            <div className="flex gap-4 w-[50%] items-center">
+                                <img src={product.image} className="w-12 h-12 md:w-24 md:h-24"/>
                                 
                                 <div className="flex flex-col gap-2">
-                                    <p className="font-semibold text-sm">{product.name}</p>
-                                    <p className="text-sm">Unid. R$ {product.price}</p>
-                                    <button className="font-semibold text-sm text-red-600 flex gap-2 items-center" onClick={() => removeProduct(product.id)}>Remover <FaTrash /></button>
+                                    <p className="font-semibold text-xs md:text-sm">{product.name}</p>
+                                    <p className="text-xs md:text-sm">Unid. R$ {product.price}</p>
+                                    <button className="font-semibold text-xs md:text-sm text-red-600 flex gap-2 items-center" onClick={() => removeProduct(product.id)}>Remover <FaTrash /></button>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center gap-2 w-[25%]">
@@ -66,12 +68,12 @@ const Cart = () => {
                     </div>
                 </section>
             ) : (
-                <section className="flex flex-col gap-8 mx-28 my-12 min-h-screen justify-center">
+                <section className="flex flex-col gap-8 mx-2 md:mx-28 my-12 justify-center">
                     <div className="bg-colorGray flex flex-col gap-8 rounded-md shadow-md p-4">
                         <div className="flex justify-between">
-                            <h1 className="font-semibold w-[50%]">Seu carrinho ({productsCart.length})</h1>
-                            <h1 className="font-semibold flex justify-center w-[25%]">Quantidade</h1>
-                            <h1 className="font-semibold flex justify-end w-[25%]">Preço</h1>
+                            <h1 className="font-semibold text-sm w-[50%]">Seu carrinho ({productsCart.length})</h1>
+                            <h1 className="font-semibold text-sm flex justify-center w-[25%]">Quantidade</h1>
+                            <h1 className="font-semibold text-sm flex justify-end w-[25%]">Preço</h1>
                         </div>
 
                         <div className="flex items-center justify-center p-12">
