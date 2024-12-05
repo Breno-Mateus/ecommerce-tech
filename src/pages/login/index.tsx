@@ -56,9 +56,9 @@ const Login = () => {
     };
 
     return (
-        <div>
+        <div className="flex flex-col min-h-screen justify-between">
             <HeaderSecondary />
-            <section className="flex justify-center items-center h-screen">
+            <section className="flex justify-center md:py-20">
                 <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 md:w-1/3" onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="font-extrabold text-xl">Login</h2>
                     
@@ -75,8 +75,8 @@ const Login = () => {
                     <Link to="/register" className="text-sm text-center cursor-pointer">Criar conta</Link>
                 </form>
             </section>
-            <Footer />
             <ToastContainer/>
+            <Footer />
         </div>
     )
 }

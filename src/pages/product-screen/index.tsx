@@ -23,7 +23,7 @@ const ProductScreen = () => {
         addProduct(selectedProduct);
         toast.success(`1 "${selectedProduct.name}" foi adicionado(a) ao carrinho!`, {
             position: "top-left",
-            autoClose: 5000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -35,11 +35,11 @@ const ProductScreen = () => {
     };
 
     return(
-        <div>
+        <div className="flex flex-col min-h-screen justify-between">
             <Header />
             <HeaderMobile />
             <MenuNav />
-            <section className="h-screen flex flex-col md:flex-row gap-16 md:gap-8 mx-12 md:mx-28 my-12">
+            <section className="flex flex-col md:flex-row gap-16 md:gap-8 mx-12 md:mx-28 my-12">
                 <div className="bg-colorGray flex flex-col p-4 md:p-10 items-center justify-center rounded-lg md:w-[70%] shadow-xl">
                     <img src={selectedProduct?.image} className="w-[20rem] md:w-[70%] h-[15rem] md:h-[70%] object-contain"/>
                 </div>

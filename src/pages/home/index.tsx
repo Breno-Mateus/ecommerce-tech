@@ -8,7 +8,7 @@ import CardPromoMobile from "../../components/card-promo-mobile";
 
 const Home = () => {
     return (
-        <div>
+        <div className="flex flex-col min-h-screen justify-between">
             <HeaderMobile />
             <Header />
             <MenuNav />

@@ -34,7 +34,7 @@ const Cart = () => {
                         {productsCart.map((product) => (
                         <div key={product.id} className="flex items-center justify-between pb-4 border-b-[1px] border-colorTextGray">
                             <div className="flex gap-4 w-[50%] items-center">
-                                <img src={product.image} className="w-12 h-12 md:w-24 md:h-24"/>
+                                <img src={product.image} className="w-12 h-12 md:w-24 md:h-20"/>
                                 
                                 <div className="flex flex-col gap-2">
                                     <p className="font-semibold text-xs md:text-sm">{product.name}</p>

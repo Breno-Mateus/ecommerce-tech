@@ -2,7 +2,7 @@ import Promo from "../../assets/promo.png";
 
 const CardPromo = () => {
     return (
-        <div className="hidden md:flex justify-center p-4 h-svh bg-colorGray">
+        <div className="hidden md:flex justify-center p-12 h-svh bg-colorGray">
             <div className="mt-24">
                 <h3 className="text-2xl font-bold">Xiaomi Mi Notebook Air 12.5</h3>
                 <ul className="list-disc list-inside">
@@ -13,7 +13,7 @@ const CardPromo = () => {
                 </ul>
             </div>
 
-            <img src={Promo} className="h-auto"/>
+            <img src={Promo} className="h-[35rem] w-[35rem]"/>
 
             <div className="mt-24 flex flex-col">
                 <p className="line-through">R$ 4.275,99</p>

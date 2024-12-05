@@ -4,6 +4,7 @@ import Footer from "../../components/footer";
 import { useLogin } from "../../store/login-store";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import HeaderMobile from "../../components/header-mobile";
 
 
 const Dashboard = () => {
@@ -11,18 +12,19 @@ const Dashboard = () => {
     const { currentUser, logoutUser } = useLogin();
 
     return (
-        <>
+        <div className="flex flex-col min-h-screen justify-between">
             <Header />
+            <HeaderMobile />
             <MenuNav />
-            <section className="flex items-center justify-center mx-28 my-12">
-                <div className="bg-colorGray w-[40%] p-8 flex flex-col items-center justify-center gap-12 rounded-xl shadow-lg">
+            <section className="flex items-center justify-center mx-2 md:mx-28 my-12">
+                <div className="bg-colorGray md:w-[40%] p-8 flex flex-col items-center justify-center gap-12 rounded-xl shadow-lg">
 
                     <FaUserCircle className="text-[10rem]"/>
 
 
                     <div className="flex flex-col gap-8">
                         <div>
-                            <p className="font-semibold">Nome completo:</p>
+                            <p className="font-semibold">Nome:</p>
                             <p>{currentUser?.name}</p>
                         </div>
                         
@@ -49,7 +51,7 @@ const Dashboard = () => {
                 </div>
             </section>
             <Footer />
-        </>
+        </div>
     )
 };
 

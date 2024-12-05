@@ -36,7 +36,7 @@ const Register = () => {
 
         toast.success(`Usuário cadastrado com sucesso!`, {
             position: "top-left",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -50,7 +50,7 @@ const Register = () => {
 
 
     return (
-        <div>
+        <div className="flex flex-col min-h-screen justify-between">
             <HeaderSecondary />
             <section className="flex justify-center items-center my-12">
                 <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 w-[90%] md:w-[50%]" onSubmit={handleSubmit(onSubmit)}>
@@ -59,9 +59,9 @@ const Register = () => {
                     <div className="flex flex-col gap-4">
                         <Inputs label="Primeiro Nome*" placeholder="Breno" type="text" htmlForId="name" register={register} error={errors.name?.message}/>
 
-                        <Inputs label="Email*" placeholder="brenomateus36@gmail.com" type="email" htmlForId="email" register={register} error={errors.email?.message}/>
+                        <Inputs label="Email*" placeholder="teste@gmail.com" type="email" htmlForId="email" register={register} error={errors.email?.message}/>
 
-                        <Inputs label="Telefone*" placeholder="8498602-8083" type="tel" htmlForId="phone" register={register} error={errors.phone?.message}/>
+                        <Inputs label="Telefone*" placeholder="8490000-0000" type="tel" htmlForId="phone" register={register} error={errors.phone?.message}/>
 
                         <div className="flex flex-col md:flex-row justify-between gap-4">
                             <Inputs label="CEP*" placeholder="00000-000" type="text" htmlForId="cep" register={register} error={errors.cep?.message}/>

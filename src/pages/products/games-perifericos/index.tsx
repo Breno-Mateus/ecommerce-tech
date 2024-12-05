@@ -6,7 +6,7 @@ import SectionProducts from "../../../components/section-products";
 
 const PerifericosGame = () => {
     return (
-        <div>
+        <div className="flex flex-col min-h-screen justify-between">
             <Header />
             <HeaderMobile />
             <MenuNav />
