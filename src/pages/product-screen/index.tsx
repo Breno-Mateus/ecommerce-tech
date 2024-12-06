@@ -52,7 +52,7 @@ const ProductScreen = () => {
                     </div>
 
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id vero quas aliquid recusandae? Possimus, consequuntur? Neque iusto inventore labore officiis. Aperiam nisi eos repellendus? Doloribus esse nostrum facilis maxime iste.</p>
+                        <p>{selectedProduct.description}</p>
                     </div>
 
                     <div>
