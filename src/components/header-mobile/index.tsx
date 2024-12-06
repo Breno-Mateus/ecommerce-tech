@@ -6,12 +6,19 @@ import { FaMicrophone, FaSearch, FaShoppingCart, FaUserCircle } from 'react-icon
 import { useCart } from '../../store/cart-store';
 import CartCountIcon from '../cart-count-icon';
 import CardSearch from '../card-search';
+import { useLogin } from '../../store/login-store';
 
 const HeaderMobile = () => {
 
     const [isOpen, setOpen] = useState<boolean>(false);
     const [ search, setSearch ] = useState('');
     const { productsCart } = useCart();
+    const { currentUser, logoutUser } = useLogin();
+
+    const handleExit = () => {
+        logoutUser();
+        setOpen(false);
+    }
 
     return (
         <header className="md:hidden flex flex-col gap-4">
@@ -43,19 +50,38 @@ const HeaderMobile = () => {
                         <div className="flex justify-end">
                             <Hamburger toggled={isOpen} toggle={setOpen} size={20}/>
                         </div>
-        
-                        <div className="flex gap-4 items-center">
-                            <FaUserCircle className="text-[4rem]"/>
-                            <div className="flex flex-col">
-                                <p className="font-medium">entre ou cadastre-se</p>
-                                <p>tenha tuuudo em um só lugar :)</p>
+
+                        {currentUser ? (
+                            <>
+                            <div className="flex gap-4 items-center">
+                                <FaUserCircle className="text-[4rem]"/>
+                                <div className="flex flex-col">
+                                    <p className="font-medium">Olá, {currentUser.name}!</p>
+                                    <p>sempre bom ter você de volta :)</p>
+                                </div>
                             </div>
-                        </div>
-        
-                        <div className="flex gap-2">
-                            <button className="bg-colorPrimary text-colorSecondary p-2 rounded-md w-[50%]">entrar</button>
-                            <button className="text-colorPrimary p-2 rounded-md w-[50%] border-[1px] border-colorPrimary">cadastrar</button>
-                        </div>
+            
+                            <div className="flex gap-2">
+                                <Link to="/dashboard" className="bg-colorPrimary text-colorSecondary p-2 rounded-md w-[50%] text-center">Meu espaço</Link>
+                                <Link to="/" className="text-colorPrimary p-2 rounded-md w-[50%] border-[1px] border-colorPrimary text-center" onClick={() => handleExit()}>Sair</Link>
+                            </div>
+                            </>
+                        ) : (
+                            <>
+                            <div className="flex gap-4 items-center">
+                                <FaUserCircle className="text-[4rem]"/>
+                                <div className="flex flex-col">
+                                    <p className="font-medium">entre ou cadastre-se</p>
+                                    <p>tenha tuuudo em um só lugar :)</p>
+                                </div>
+                            </div>
+            
+                            <div className="flex gap-2">
+                                <Link to="/login" className="bg-colorPrimary text-colorSecondary p-2 rounded-md w-[50%] text-center">entrar</Link>
+                                <Link to="/register" className="text-colorPrimary p-2 rounded-md w-[50%] border-[1px] border-colorPrimary text-center">cadastrar</Link>
+                            </div>
+                            </>  
+                        )}
                     </div>
         
                     <div className="flex flex-col gap-4 p-4">
