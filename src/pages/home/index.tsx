@@ -1,9 +1,9 @@
 import Header from "../../components/header";
 import MenuNav from "../../components/menu-nav";
-import CardPromo from "../../components/card-promo";
 import Footer from "../../components/footer";
 import SectionProducts from "../../components/section-products";
 import HeaderMobile from "../../components/header-mobile";
+import Banner from "../../assets/banner.png"
 
 const Home = () => {
     return (
@@ -11,7 +11,7 @@ const Home = () => {
             <HeaderMobile />
             <Header />
             <MenuNav />
-            <CardPromo />
+            <div><img src={Banner}/></div>
             <SectionProducts filterProducts={false} />
             <Footer />
         </div>
