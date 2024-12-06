@@ -19,9 +19,11 @@ const Cart = () => {
 
     return (
         <div className="flex flex-col min-h-screen justify-between">
-            <Header />
+            <div className="hidden md:flex flex-col">
+                <Header />
+                <MenuNav />
+            </div>
             <HeaderMobile />
-            <MenuNav />
             {productsCart.length > 0 ? (
                 <section className="flex flex-col gap-8 mx-2 md:mx-28 my-12 justify-center">
                     <div className="bg-colorGray flex flex-col gap-8 rounded-md shadow-md p-4">

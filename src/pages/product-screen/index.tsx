@@ -36,15 +36,17 @@ const ProductScreen = () => {
 
     return(
         <div className="flex flex-col min-h-screen justify-between">
-            <Header />
+            <div className="hidden md:flex flex-col">
+                <Header />
+                <MenuNav />
+            </div>
             <HeaderMobile />
-            <MenuNav />
-            <section className="flex flex-col md:flex-row gap-16 md:gap-8 mx-12 md:mx-28 my-12">
-                <div className="bg-colorGray flex flex-col p-4 md:p-10 items-center justify-center rounded-lg md:w-[70%] shadow-xl">
+            <section className="flex flex-col md:flex-row gap-16 md:gap-8 mx-12 lg:mx-28 my-12">
+                <div className="bg-colorGray flex flex-col p-4 md:p-10 items-center justify-center rounded-lg md:w-[50%] xl:w-[70%] shadow-xl">
                     <img src={selectedProduct?.image} className="w-[20rem] md:w-[70%] h-[15rem] md:h-[70%] object-contain"/>
                 </div>
 
-                <div className="bg-colorGray rounded-lg px-4 py-8 md:p-10 flex flex-col justify-around gap-12 md:w-[30%] shadow-xl">
+                <div className="bg-colorGray rounded-lg px-4 py-8 md:p-10 flex flex-col justify-around gap-12 md:w-[50%] xl:w-[30%] shadow-xl">
                     <div>
                         <p>{selectedProduct?.name}</p>
                     </div>
@@ -64,8 +66,8 @@ const ProductScreen = () => {
                     <button onClick={handleAddProduct} className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90 w-full flex items-center justify-center gap-6"> <FaShoppingBasket /> Comprar</button>
                 </div>
             </section>
-            <Footer />
             <ToastContainer/>
+            <Footer />
         </div>
     )
 };

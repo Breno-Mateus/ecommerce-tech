@@ -27,8 +27,8 @@ const Payment = () => {
     return (
         <div className="flex flex-col min-h-screen justify-between">
             <HeaderSecondary />
-            <section className="mx-8 md:mx-28 my-12">
-                <div className="bg-colorGray flex flex-col gap-8 md:flex-row md:justify-between p-4 md:min-h-screen rounded-lg shadow-md">
+            <section className="mx-8 xl:mx-28 my-12">
+                <div className="bg-colorGray flex flex-col gap-8 md:flex-row md:justify-between p-4 xl:min-h-screen rounded-lg shadow-md">
                     <div className="flex flex-col md:justify-around gap-8 md:w-[40%]">
                         <div className="flex flex-col gap-8 h-[30%]">
                             <div className="flex gap-2">
@@ -38,7 +38,7 @@ const Payment = () => {
                             }, 0)} item(ns)</h3>
                             </div>
 
-                            <div className="flex flex-col gap-8 overflow-y-scroll h-[55%] md:h-[22rem]">
+                            <div className="flex flex-col overflow-y-scroll h-[55%] md:h-[22rem]">
                                 {productsCart.map((product) => (
                                     <div key={product.id} className="flex gap-8">
                                         <div className="w-[40%]">
@@ -46,7 +46,7 @@ const Payment = () => {
                                         </div>
 
                                         <div className="flex flex-col justify-between w-[60%] md:w-auto">
-                                            <p>{product.name} - x{product.quantity}</p>
+                                            <p>{product.name} - <span className="text-sm">x</span>{product.quantity}</p>
                                             <p>R$ {product.price}</p>
                                         </div>
                                     </div>
@@ -54,13 +54,11 @@ const Payment = () => {
                             </div>
                         </div>
 
-                        {/*Endereço*/}
                         <div className="flex flex-col gap-8">
                             <h3 className="font-bold">Endereço de entrega</h3>
                             <p>{currentUser?.street} {currentUser?.number}, {currentUser?.neighborhood} - {currentUser?.cep}</p>
                         </div>
 
-                        {/*Pagamento*/}
                         <div className="flex flex-col gap-8">
                             <h3 className="font-bold">Forma de pagamneto</h3>
                             <div className="flex gap-8">

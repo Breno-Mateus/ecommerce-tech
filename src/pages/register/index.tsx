@@ -53,7 +53,7 @@ const Register = () => {
         <div className="flex flex-col min-h-screen justify-between">
             <HeaderSecondary />
             <section className="flex justify-center items-center my-12">
-                <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 w-[90%] md:w-[50%]" onSubmit={handleSubmit(onSubmit)}>
+                <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 w-[90%] xl:w-[50%]" onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="font-extrabold text-xl">Cadastro de Usuário</h2>
 
                     <div className="flex flex-col gap-4">
@@ -83,8 +83,8 @@ const Register = () => {
                     <button type="submit" className="bg-colorPrimary rounded-md text-colorSecondary p-2 hover:bg-opacity-90">Cadastrar</button>
                 </form>
             </section>
-            <Footer />
             <ToastContainer/>
+            <Footer />
         </div>
     )
 };

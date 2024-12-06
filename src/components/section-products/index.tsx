@@ -42,7 +42,7 @@ const SectionProducts = ({filterProducts, category} : sectionProductsProps) => {
                 </div>
             </div>
 
-            <div className="flex gap-10 flex-wrap justify-center">
+            <div className="flex gap-10 lg:gap-28 xl:gap-32 flex-wrap justify-center">
                 {subarrays[page - 1].map((product) => (
                     <BoxProduct key={product.id} id={product.id} name={product.name} price={product.price} image={product.image}/>
                 ))}

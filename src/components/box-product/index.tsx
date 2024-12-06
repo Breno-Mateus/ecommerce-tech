@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const BoxProduct = ({id, name, price, image} : BoxProps ) => {
 
     return (
-        <div className="bg-colorGray flex justify-around flex-col h-96 w-72 gap-4 rounded-lg shadow-xl">
+        <div className="bg-colorGray flex justify-around flex-col h-80 w-60 gap-4 rounded-lg shadow-xl">
             <div className="h-1/2 p-2">
                 <img src={image} className="w-full h-full object-contain"/>
             </div>
 
-            <div className="flex flex-col gap-6 p-6">
+            <div className="flex flex-col gap-6 p-6 text-sm">
                 <p className="font-bold">{name}</p>
                 <div className="flex items-center justify-between">
                     <p>R$ {price}</p>

@@ -13,11 +13,13 @@ const Dashboard = () => {
 
     return (
         <div className="flex flex-col min-h-screen justify-between">
-            <Header />
+            <div className="hidden md:flex flex-col">
+                <Header />
+                <MenuNav />
+            </div>
             <HeaderMobile />
-            <MenuNav />
             <section className="flex items-center justify-center mx-2 md:mx-28 my-12">
-                <div className="bg-colorGray md:w-[40%] p-8 flex flex-col items-center justify-center gap-12 rounded-xl shadow-lg">
+                <div className="bg-colorGray xl:w-[40%] p-8 flex flex-col items-center justify-center gap-12 rounded-xl shadow-lg">
 
                     <FaUserCircle className="text-[10rem]"/>
 

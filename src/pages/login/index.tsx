@@ -43,7 +43,7 @@ const Login = () => {
         } else {
             toast.error('Email ou senha incorretos!', {
                 position: "top-left",
-                autoClose: 3000,
+                autoClose: 2000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -59,7 +59,7 @@ const Login = () => {
         <div className="flex flex-col min-h-screen justify-between">
             <HeaderSecondary />
             <section className="flex justify-center md:py-20">
-                <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 md:w-1/3" onSubmit={handleSubmit(onSubmit)}>
+                <form className="bg-colorGray p-4 flex flex-col justify-center rounded-lg shadow-lg gap-8 xl:w-1/3" onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="font-extrabold text-xl">Login</h2>
                     
                     <p className="text-sm">Digite seus dados de acesso no campo abaixo.</p>
