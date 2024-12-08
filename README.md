@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# E-Commerce Tech  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um e-commerce moderno e funcional, voltado para a venda de produtos tecnológicos, como notebooks, periféricos gamers, celulares, tablets, dispositivos de automação residencial e equipamentos de áudio.  
 
-Currently, two official plugins are available:
+🔗 **Acesse agora**: [E-Commerce Tech](https://ecommerce-tech-beige.vercel.app/)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📜 Funcionalidades  
 
-## Expanding the ESLint configuration
+- 🔍 **Busca**: Pesquise produtos pelo nome.  
+- 🛍️ **Categorias**: Explore produtos organizados em categorias.  
+- 🛒 **Carrinho de Compras**:  
+  - Adicione produtos ao carrinho.  
+  - Incrementar ou decrementar a quantidade de um item.  
+  - Remova produtos individualmente ou esvazie o carrinho por completo.  
+- 🔐 **Autenticação**: Sistema de login e cadastro de usuários.  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🛠️ Tecnologias Utilizadas  
 
-- Configure the top-level `parserOptions` property like this:
+- **Framework e Linguagem**:  
+  - [React](https://react.dev/)  
+  - [TypeScript](https://www.typescriptlang.org/)  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Estilização**:  
+  - [Tailwind CSS](https://tailwindcss.com/)  
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **Validação de Formulários**:  
+  - [Yup](https://github.com/jquense/yup)  
+  - [React Hook Form](https://react-hook-form.com/)  
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Gerenciamento de Estado**:  
+  - [Zustand](https://zustand-demo.pmnd.rs/)  
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **Navegação**:  
+  - [React Router Dom](https://reactrouter.com/)  
+
+- **Feedbacks Visuais**:  
+  - [React Toastify](https://fkhadra.github.io/react-toastify/introduction)  
+
+- **Ícones**:  
+  - [React Icons](https://react-icons.github.io/react-icons/)  
+
+- **Menu Hambúrguer**:  
+  - [Hamburger React](https://hamburger-react.netlify.app/)  
+
+- **Ferramenta de Build**:  
+  - [Vite](https://vitejs.dev/)  
+
+- **Testes**:  
+  - [Jest](https://jestjs.io/)  
+  - [Testing Library](https://testing-library.com/)  
+
+## 🚀 Como Rodar o Projeto  
+
+### Pré-requisitos  
+- Node.js (versão LTS recomendada).  
+- Gerenciador de pacotes **npm** ou **yarn**.  
+
+### Passos  
+
+1. **Clone o repositório**:  
+   ```bash  
+   git clone https://github.com/seu-usuario/e-commerce-tech.git  
+   cd e-commerce-tech  
+
+2. **Instale as dependências:**:
+   ```bash
+   npm install  
+   ou  
+   yarn install    
+
+3. **Execute o projeto em modo de desenvolvimento:**:
+   ```bash 
+   npm run dev  
+   ou  
+   yarn dev  
+
+### 📄 Licença
+
+Este projeto está sob a licença MIT.
