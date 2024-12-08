@@ -193,7 +193,7 @@ const products: Product[] = [
     description: "Tela OLED de 144Hz, Snapdragon 778G e câmera tripla de 108MP.",
   },
 
-    // Áudio
+  // Áudio
   {
     id: 19,
     name: "Fone de Ouvido JBL Tune 500BT",
