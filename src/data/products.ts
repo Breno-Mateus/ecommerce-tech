@@ -47,7 +47,7 @@ const products: Product[] = [
   {
     id: 1,
     name: "Notebook Dell Inspiron 15",
-    price: 3500,
+    price: 3.500,
     category: "notebooks",
     image: `${Notebook1}`,
     description: "Notebook com processador Intel Core i5, 8GB de RAM e SSD de 256GB.",
@@ -55,7 +55,7 @@ const products: Product[] = [
   {
     id: 2,
     name: "Notebook Acer Aspire 5",
-    price: 3200,
+    price: 3.200,
     category: "notebooks",
     image: `${Notebook2}`,
     description: "Equipado com Intel Core i3, 4GB de RAM e armazenamento de 1TB HDD.",
@@ -63,7 +63,7 @@ const products: Product[] = [
   {
     id: 3,
     name: "Notebook Lenovo Ideapad",
-    price: 2800,
+    price: 2.800,
     category: "notebooks",
     image: `${Notebook3}`,
     description: "Tela de 15.6 polegadas, AMD Ryzen 3, 4GB de RAM e SSD de 128GB.",
@@ -71,7 +71,7 @@ const products: Product[] = [
   {
     id: 4,
     name: "Notebook Samsung Galaxy Book S",
-    price: 4000,
+    price: 4.000,
     category: "notebooks",
     image: `${Notebook4}`,
     description: "Ultraleve com processador Intel Core i5 e tela touch Full HD.",
@@ -79,7 +79,7 @@ const products: Product[] = [
   {
     id: 5,
     name: "Notebook Apple MacBook Air",
-    price: 7500,
+    price: 7.500,
     category: "notebooks",
     image: `${Notebook5}`,
     description: "Processador Apple M1, 8GB de RAM e armazenamento SSD de 256GB.",
@@ -87,7 +87,7 @@ const products: Product[] = [
   {
     id: 6,
     name: "Notebook HP Pavilion",
-    price: 3300,
+    price: 3.300,
     category: "notebooks",
     image: `${Notebook6}`,
     description: "Potência e estilo com Intel Core i5, 8GB de RAM e HDD de 1TB.",
@@ -121,7 +121,7 @@ const products: Product[] = [
   {
     id: 10,
     name: "Cadeira Gamer DT3",
-    price: 1200,
+    price: 1.200,
     category: "Periféricos de games",
     image: `${Games4}`,
     description: "Design ergonômico com ajustes de altura e apoio para lombar.",
@@ -147,7 +147,7 @@ const products: Product[] = [
   {
     id: 13,
     name: "iPhone 13",
-    price: 7000,
+    price: 7.000,
     category: "Celulares e Tablets",
     image: `${Smartphones1}`,
     description: "Chip A15 Bionic, câmera dupla e tela Super Retina XDR.",
@@ -155,7 +155,7 @@ const products: Product[] = [
   {
     id: 14,
     name: "Samsung Galaxy S21",
-    price: 5000,
+    price: 5.000,
     category: "Celulares e Tablets",
     image: `${Smartphones2}`,
     description: "Processador Exynos 2100, câmera de 108MP e tela AMOLED de 120Hz.",
@@ -163,7 +163,7 @@ const products: Product[] = [
   {
     id: 15,
     name: "iPad Pro 11",
-    price: 8500,
+    price: 8.500,
     category: "Celulares e Tablets",
     image: `${Smartphones3}`,
     description: "Tela Liquid Retina, Chip M1 e suporte a Apple Pencil.",
@@ -171,7 +171,7 @@ const products: Product[] = [
   {
     id: 16,
     name: "Tablet Samsung Galaxy Tab S7",
-    price: 4000,
+    price: 4.000,
     category: "Celulares e Tablets",
     image: `${Smartphones4}`,
     description: "Tela AMOLED de 120Hz, Snapdragon 865+ e caneta S Pen inclusa.",
@@ -179,7 +179,7 @@ const products: Product[] = [
   {
     id: 17,
     name: "Xiaomi Redmi Note 10",
-    price: 2000,
+    price: 2.000,
     category: "Celulares e Tablets",
     image: `${Smartphones5}`,
     description: "Câmera de 48MP, bateria de 5000mAh e tela AMOLED Full HD+.",
@@ -187,7 +187,7 @@ const products: Product[] = [
   {
     id: 18,
     name: "Motorola Edge 20",
-    price: 3500,
+    price: 3.500,
     category: "Celulares e Tablets",
     image: `${Smartphones6}`,
     description: "Tela OLED de 144Hz, Snapdragon 778G e câmera tripla de 108MP.",
@@ -213,7 +213,7 @@ const products: Product[] = [
   {
     id: 21,
     name: "Fone de Ouvido Sony WH-1000XM4",
-    price: 1200,
+    price: 1.200,
     category: "Equipamentos de áudio",
     image: `${Audio6}`,
     description: "Cancelamento de ruído líder da categoria e qualidade de som superior.",
@@ -229,7 +229,7 @@ const products: Product[] = [
   {
     id: 23,
     name: "Home Theater LG XBOOM",
-    price: 1500,
+    price: 1.500,
     category: "Equipamentos de áudio",
     image: `${Audio5}`,
     description: "Sistema de áudio com 5.1 canais e conectividade Bluetooth.",
@@ -237,7 +237,7 @@ const products: Product[] = [
   {
     id: 24,
     name: "Fone de Ouvido Bose QuietComfort 35 II",
-    price: 1300,
+    price: 1.300,
     category: "Equipamentos de áudio",
     image: `${Audio3}`,
     description: "Cancelamento de ruído avançado e som equilibrado em todas as frequências.",

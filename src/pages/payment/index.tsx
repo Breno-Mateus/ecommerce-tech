@@ -60,7 +60,7 @@ const Payment = () => {
                         </div>
 
                         <div className="flex flex-col gap-8">
-                            <h3 className="font-bold">Forma de pagamneto</h3>
+                            <h3 className="font-bold">Escolha a forma de pagamneto:</h3>
                             <div className="flex gap-8">
                                 <div className="flex flex-col gap-12">
                                     <div className={`${isClicked && methodPayment === 'Pix' ? "text-blue-600" : "text-colorPrimary"} flex gap-4 items-center`}>
