@@ -45,7 +45,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             <div className="flex items-center justify-center gap-2 w-[25%]">
-                                <button onClick={() => decrementQuantity(product.id)} disabled={handleDisabled(product.quantity)} className={`${handleDisabled(product.quantity) === true ? "hover:cursor-not-allowed" : "hover:cursor-pointer"}`}>-</button>
+                                <button onClick={() => decrementQuantity(product.id)} disabled={handleDisabled(product.quantity)} className={`${handleDisabled(product.quantity) === true ? "hover:cursor-not-allowed text-colorTextGray" : "hover:cursor-pointer"}`}>-</button>
                                 <div className="bg-colorSecondary rounded-md p-2 border-[1px] border-colorTextGray">
                                     <p>{product.quantity}</p>
                                 </div>
