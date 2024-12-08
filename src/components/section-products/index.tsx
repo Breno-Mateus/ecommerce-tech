@@ -4,6 +4,8 @@ import BoxProduct from "../box-product";
 import { sectionProductsProps } from "./type";
 import { IoMdArrowDropleft } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const SectionProducts = ({filterProducts, category} : sectionProductsProps) => {
 
@@ -41,6 +43,13 @@ const SectionProducts = ({filterProducts, category} : sectionProductsProps) => {
                     <button disabled={subarrays.length === page} onClick={() => setPage(page + 1)}><IoMdArrowDropright className={`text-xl ${subarrays.length === page ? " text-colorGray hover:cursor-not-allowed" : "hover:cursor-pointer"}`}/></button>
                 </div>
             </div>
+
+            {filterProducts === true && (
+            <div className="rounded-md bg-colorGray p-2 flex justify-between gap-4 w-[60%] md:w-[45%] lg:w-[33%] xl:w-[23%]">
+                <p className="text-xs md:text-base">{category}</p>
+                <Link to="/" className="text-xs md:text-base flex items-center"><IoClose/></Link>
+            </div>
+            )}
 
             <div className="flex gap-10 lg:gap-28 xl:gap-32 flex-wrap justify-center">
                 {subarrays[page - 1].map((product) => (
