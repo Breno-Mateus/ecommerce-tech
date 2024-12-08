@@ -10,6 +10,7 @@ describe('Cart state management', () => {
         price: 100,
         category: 'Category A',
         image: 'image-url',
+        description: 'descrição'
     });
 
     afterEach(() => {
@@ -33,6 +34,7 @@ describe('Cart state management', () => {
             price: 100,
             category: 'Category A',
             image: 'image-url',
+            description: 'descrição',
             quantity: 1,
         }));
     });
@@ -54,6 +56,7 @@ describe('Cart state management', () => {
             price: 100,
             category: 'Category A',
             image: 'image-url',
+            description: 'descrição',
             quantity: 2,
         }));
     });
@@ -76,6 +79,7 @@ describe('Cart state management', () => {
             price: 100,
             category: 'Category A',
             image: 'image-url',
+            description: 'descrição',
             quantity: 1,
         }));
 
